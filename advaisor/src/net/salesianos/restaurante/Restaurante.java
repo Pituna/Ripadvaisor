@@ -54,7 +54,6 @@ public class Restaurante {
     public String toString() {
     return nombre + " - " + ciudad + " - " + tipo + " - " + puntuacion;
     }
-
     public boolean esMejor(Restaurante otro){
         return this.puntuacion > otro.puntuacion;
     }
