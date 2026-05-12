@@ -30,9 +30,13 @@ public class Restaurante {
         return this.tipo;
     }
 
-    public void setPunt(int punt){
-        this.puntuacion = punt;
+    public void setPuntuacion(int puntuacion) {
+    if (puntuacion >= 1 && puntuacion <= 5) {
+        this.puntuacion = puntuacion;
+    } else {
+        this.puntuacion = 1; 
     }
+}
 
     public void setNombre(String name){
         this.nombre = name;
@@ -44,5 +48,14 @@ public class Restaurante {
 
     public void setTipo(String tipo){
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+    return nombre + " - " + ciudad + " - " + tipo + " - " + puntuacion;
+    }
+
+    public boolean esMejor(Restaurante otro){
+        return this.puntuacion > otro.puntuacion;
     }
 }
