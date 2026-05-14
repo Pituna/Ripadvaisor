@@ -73,3 +73,44 @@ public class App {
 
                         break;
 
+                    case "2":
+
+                        if (restaurantes.isEmpty()) {
+                            JOptionPane.showMessageDialog(null,
+                                    "No hay restaurantes");
+                            break;
+                        }
+
+                        String listaEditar = "";
+
+                        for (int i = 0; i < restaurantes.size(); i++) {
+
+                            listaEditar += i + " - "
+                                    + restaurantes.get(i)
+                                    + "\n";
+                        }
+
+                        int indiceEditar = Integer.parseInt(
+                                JOptionPane.showInputDialog(
+                                        listaEditar
+                                        + "\nSelecciona índice"));
+
+                        Restaurante editar = restaurantes.get(indiceEditar);
+
+                        editar.setNombre(
+                                InputUtils.pedirTexto("Nuevo nombre"));
+
+                        editar.setCiudad(
+                                InputUtils.pedirTexto("Nueva ciudad"));
+
+                        editar.setTipo(
+                                InputUtils.pedirTexto("Nuevo tipo"));
+
+                        editar.setPuntuacion(
+                                InputUtils.pedirNumero(
+                                        "Nueva puntuación"));
+
+                        JOptionPane.showMessageDialog(null,
+                                "Restaurante editado");
+
+                        break;
