@@ -167,3 +167,34 @@ public class App {
                                 "Restaurante eliminado");
 
                         break;
+
+                    case "5":
+
+                        salir = true;
+
+                        JOptionPane.showMessageDialog(null,
+                                "Saliendo del programa");
+
+                        break;
+
+                    default:
+
+                        JOptionPane.showMessageDialog(null,
+                                "Opción incorrecta");
+                }
+
+            } catch (IndexOutOfBoundsException e) {
+
+                JOptionPane.showMessageDialog(null,
+                        "Índice no válido");
+
+            } catch (Exception e) {
+
+                JOptionPane.showMessageDialog(null,
+                        "Error: " + e.getMessage());
+            }
+        }
+
+        frame.dispose();
+    }
+}
