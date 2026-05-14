@@ -138,3 +138,32 @@ public class App {
                         JOptionPane.showMessageDialog(null, lista);
 
                         break;
+
+                    case "4":
+
+                        if (restaurantes.isEmpty()) {
+                            JOptionPane.showMessageDialog(null,
+                                    "No hay restaurantes");
+                            break;
+                        }
+
+                        String listaEliminar = "";
+
+                        for (int i = 0; i < restaurantes.size(); i++) {
+
+                            listaEliminar += i + " - "
+                                    + restaurantes.get(i)
+                                    + "\n";
+                        }
+
+                        int indiceEliminar = Integer.parseInt(
+                                JOptionPane.showInputDialog(
+                                        listaEliminar
+                                        + "\nSelecciona índice"));
+
+                        restaurantes.remove(indiceEliminar);
+
+                        JOptionPane.showMessageDialog(null,
+                                "Restaurante eliminado");
+
+                        break;
