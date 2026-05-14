@@ -114,3 +114,27 @@ public class App {
                                 "Restaurante editado");
 
                         break;
+
+                    case "3":
+
+                        if (restaurantes.isEmpty()) {
+                            JOptionPane.showMessageDialog(null,
+                                    "No hay restaurantes");
+                            break;
+                        }
+
+                        Collections.sort(
+                                restaurantes,
+                                Comparator.comparing(
+                                        Restaurante::getPunt)
+                                        .reversed());
+
+                        String lista = "";
+
+                        for (Restaurante r : restaurantes) {
+                            lista += r + "\n";
+                        }
+
+                        JOptionPane.showMessageDialog(null, lista);
+
+                        break;
